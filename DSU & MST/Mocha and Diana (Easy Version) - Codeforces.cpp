@@ -1,5 +1,5 @@
 /*
- *      DSU
+ *      Brute force using DSU
  *      D1 - Mocha and Diana (Easy Version) Solution
  *      Link (Easy Version) : https://codeforces.com/contest/1559/problem/D1
  *      By Abdelaleem Ahmed
