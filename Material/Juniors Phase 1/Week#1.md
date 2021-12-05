@@ -1,4 +1,23 @@
-## 1- Complexity of algorithms
+# Week #1
+ 
+## 1- Thinking Techniques Tips:
+#### important videos :
+  * Approaching Problem Statement: 
+  
+  
+  
+[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0)
+
+
+  * On papers Not on PC : 
+  
+  
+  
+[![Watch the video](https://img.youtube.com/vi/olcmPKZNqnM/maxresdefault.jpg)](https://youtu.be/olcmPKZNqnM)
+
+
+---
+## 2- Complexity of algorithms
 #### Extra notes:
 * The following picture (from a book called Competitive Programming 3 by Steven Halim) shows a rough estimation of the worst complexity of an algorithm that can be used for a problem of a given size.  
 
@@ -20,7 +39,7 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 
 ---
 
-## 2- Frequency array
+## 3- Frequency array
 #### Extra notes:
 * The usage of frequency arrays has its limitations. Remember that you need an array whose size is equal to the value of the largest integer in the original array. Which means that you can't use a frequency array if the values in the original array can be up to 10^9 for example.  
 In most cases, you can use frequency arrays safely for values up to 10^7. However, in some websites like Codeforces, you will be given the amount of memory available for your program, which you can use to calculate (roughly) the maximum size of a frequency array that you can use.
@@ -42,7 +61,7 @@ I'll leave it for you to think about how we could implement this function that c
 
 ---
 
-## 3- Prefix sum
+## 4- Prefix sum
 #### Extra notes:
 * In many cases, you don't need the original array after you build the prefix_sum array. In these cases, it's better to "transform" your original array into a prefix_sum array, instead of creating a separate array for the prefix sum.  
 Suppose that you have a zero-indexed array `A` that you want to compute a prefix sum for, then you can write:
@@ -86,7 +105,7 @@ dynamic programming and the principle of inclusion-exclusion.
 
 ---
 
-## 4- Complexity of algorithms II
+## 5- Complexity of algorithms II
 #### Problems:
 There are no problems for this video (at least for now), so I will add more problems for the next video to compensate.
 
@@ -96,7 +115,7 @@ This playlist is also an excellent resource if you want to learn about the imple
 
 ---
 
-## 5- C++
+## 6- C++
 #### Extra notes:
 * What I said that using `cin` makes your code shorter, I really meant that it is (usually) faster to write than `scanf`. Sorry if that wasn't clear.
 
@@ -125,13 +144,13 @@ In the last two videos, we haven't really learned a new algorithm or technique, 
 
 ---
 
-## 6- Overflow and type casting
+## 7- Overflow and type casting
 #### Problems:
 There are no problems for this video (at least for now).
 
 ---
 
-## 7- Partial sum
+## 8- Partial sum
 #### Extra notes:
 * Some people use the terms "Prefix sum" and "Partial sum" interchangeably.
 
