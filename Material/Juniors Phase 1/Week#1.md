@@ -5,6 +5,9 @@
   * Approaching Problem Statement: [video](https://youtu.be/fd0Ebfa_mJ0) 
 
 
+* Tips and Tricks in Algorithms: [video](https://youtu.be/-jE3_O9Dpps)
+
+
   * On papers Not on PC : [video](https://youtu.be/olcmPKZNqnM)
 
 
