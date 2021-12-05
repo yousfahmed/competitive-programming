@@ -1,11 +1,11 @@
-[link](url){:target="_blank"}
+<a href="http://example.com/" target="_blank">Hello, world!</a>
 # Week #1
  
 ## 1- Thinking Techniques Tips:
 #### important videos :
   * Approaching Problem Statement: 
   
-[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0){:target="_blank"}
+[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0)
 
 
   * On papers Not on PC : 
