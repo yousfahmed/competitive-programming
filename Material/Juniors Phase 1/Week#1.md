@@ -110,7 +110,7 @@ You can apply the same concept to 3D arrays, but it will be a little bit tedious
 ## 6- C++
 #### Vectors and its methods
 
-*  Vectors : [playlist](https://www.youtube.com/watch?v=AMnultLTdlI&list=PLCInYL3l2AainAE4Xq2kdNGDfG0bys2xp&index=2) ... whatch the three vectors video only
+*  Vectors : [playlist](https://www.youtube.com/watch?v=AMnultLTdlI&list=PLCInYL3l2AainAE4Xq2kdNGDfG0bys2xp&index=2) ... watch the three vectors video only
 
 
 #### Problems:
