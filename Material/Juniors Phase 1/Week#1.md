@@ -2,7 +2,7 @@
 #### Extra notes:
 * The following picture (from a book called Competitive Programming 3 by Steven Halim) shows a rough estimation of the worst complexity of an algorithm that can be used for a problem of a given size.  
 
-![Image](images/TimeComplexity.png)
+![Image](Images/TimeComplexity.png)
 
 * An easier way to get a rough estimation of whether an algorithm will pass for a given problem size or not, is simply to substitute with the problem's limits in the upper-bound function of your algorithm.  
 For example, if your algorithm is O(N^2), and N (which is the array size for example) in this problem is up to 1000. Then you can substitute N with 1000 in the N^2 equation, which will give you 1000000.  
