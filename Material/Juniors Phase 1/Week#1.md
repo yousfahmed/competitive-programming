@@ -4,8 +4,6 @@
 #### important videos :
   * Approaching Problem Statement: 
   
-  
-  
 [![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0)
 
 
@@ -28,14 +26,15 @@ For example, if your algorithm is O(N^2), and N (which is the array size for exa
 If the number you get from this substitution is <= 10^8, then "most probably" your solution will not exceed the time limit for most of the problems (which is about 2 seconds).
 
 #### Problems:
-1. http://codeforces.com/problemset/problem/677/A
-2. http://codeforces.com/problemset/problem/734/A
-3. http://codeforces.com/problemset/problem/791/A
-4. http://codeforces.com/problemset/problem/231/A
-5. http://codeforces.com/problemset/problem/263/A
-6. http://codeforces.com/problemset/problem/112/A
-7. http://codeforces.com/problemset/problem/59/A
-8. http://codeforces.com/problemset/problem/268/A
+1. http://codeforces.com/problemset/problem/268/A
+2. https://codeforces.com/contest/1612/problem/A
+3. https://codeforces.com/group/eRF9oTy30p/contest/357837/problem/H 
+ * NewComsers group : https://codeforces.com/group/eRF9oTy30p/
+4. https://codeforces.com/contest/1520/problem/A
+5. https://codeforces.com/problemset/problem/1478/B
+6. https://codeforces.com/contest/1475/problem/B
+
+#### you can check the Tutorial section for each problem, Don't ask about the solutions
 
 ---
 
