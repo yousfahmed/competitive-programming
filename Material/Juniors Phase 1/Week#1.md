@@ -112,29 +112,12 @@ You can apply the same concept to 3D arrays, but it will be a little bit tedious
 
 *  Vectors : [playlist](https://www.youtube.com/watch?v=AMnultLTdlI&list=PLCInYL3l2AainAE4Xq2kdNGDfG0bys2xp&index=2) ... watch the three vectors video only
 
-
-#### Problems:
-In the last two videos, we haven't really learned a new algorithm or technique, so it's a good point to stop and practice.
-
-###### Basic problems
-1. http://codeforces.com/problemset/problem/433/B (Use the C++ STL sort function)
-2. http://codeforces.com/problemset/problem/825/A
-3. http://codeforces.com/problemset/gymProblem/100814/I
-4. http://codeforces.com/problemset/problem/776/A
-5. http://codeforces.com/problemset/problem/828/A
-6. http://codeforces.com/problemset/problem/820/A
-7. http://codeforces.com/problemset/problem/768/A
-8. http://codeforces.com/problemset/problem/821/A   
-
-###### A little bit harder
-1. http://codeforces.com/problemset/problem/66/B
-2. http://codeforces.com/problemset/problem/828/B
-3. http://codeforces.com/problemset/problem/825/B
-4. http://codeforces.com/problemset/problem/102/B
-
 ---
 
 ## 8- Partial sum
+
+* Prefix sum : [video](https://youtu.be/vF78qRAAyx4)
+
 #### Extra notes:
 * Some people use the terms "Prefix sum" and "Partial sum" interchangeably.
 
@@ -146,7 +129,7 @@ Fortunately, there is an efficient solution for this task, which I will not expl
 ```cpp
 typedef long long ll;
 
-#define MAX 1000000+9   //Maximum array size
+const int MAX = 1000000+9;   //Maximum array size
 int a[MAX];
 ll inst[MAX], perm[MAX];
 
