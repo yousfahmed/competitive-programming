@@ -1,10 +1,11 @@
+[link](url){:target="_blank"}
 # Week #1
  
 ## 1- Thinking Techniques Tips:
 #### important videos :
   * Approaching Problem Statement: 
   
-[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0)
+[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0){:target="_blank"}
 
 
   * On papers Not on PC : 
