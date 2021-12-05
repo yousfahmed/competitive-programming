@@ -1,4 +1,4 @@
-<a href="http://example.com/" target="_blank">Hello, world!</a>
+<a href="https://codeforces.com/contest/1475/problem/B" target="_blank">Hello, world!</a>
 # Week #1
  
 ## 1- Thinking Techniques Tips:
