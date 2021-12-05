@@ -2,20 +2,21 @@
  
 ## 1- Thinking Techniques Tips:
 #### important videos :
-  * Approaching Problem Statement: 
-  
-[![Watch the video](https://img.youtube.com/vi/fd0Ebfa_mJ0/maxresdefault.jpg)](https://youtu.be/fd0Ebfa_mJ0)
+  * Approaching Problem Statement: [video](https://youtu.be/fd0Ebfa_mJ0) 
 
 
-  * On papers Not on PC : 
-  
-  
-  
-[![Watch the video](https://img.youtube.com/vi/olcmPKZNqnM/maxresdefault.jpg)](https://youtu.be/olcmPKZNqnM)
+  * On papers Not on PC : [video](https://youtu.be/olcmPKZNqnM)
 
 
 ---
 ## 2- Complexity of algorithms
+
+* what is Complexity : [video](https://youtu.be/sHhVsGQz9MI)
+
+* Another video :  [video](https://www.youtube.com/watch?v=hYalOGs1_Og)
+
+
+
 #### Extra notes:
 * The following picture (from a book called Competitive Programming 3 by Steven Halim) shows a rough estimation of the worst complexity of an algorithm that can be used for a problem of a given size.  
 
@@ -41,6 +42,10 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 ---
 
 ## 3- Frequency array
+
+* Frequency array : [video](https://youtu.be/kQGTjql8WjI)
+
+
 #### Extra notes:
 * The usage of frequency arrays has its limitations. Remember that you need an array whose size is equal to the value of the largest integer in the original array. Which means that you can't use a frequency array if the values in the original array can be up to 10^9 for example.  
 In most cases, you can use frequency arrays safely for values up to 10^7. However, in some websites like Codeforces, you will be given the amount of memory available for your program, which you can use to calculate (roughly) the maximum size of a frequency array that you can use.
@@ -48,8 +53,8 @@ In most cases, you can use frequency arrays safely for values up to 10^7. Howeve
 * You can use a frequency array to sort an array in O(M) time ([Counting Sort](https://www.geeksforgeeks.org/counting-sort/)), where M is the value of the largest integer in the array. Which could be much more efficient than merge sort (which runs in O(NlogN)) (we will discuss it later) in cases where the array size is large but the values inside the array are bounded with a small number.
 
 
-## we already create a sheet in the codeforces group that discuss this topic
-[Sheet](https://codeforces.com/group/B1an7MPWiH/contest/357994)
+#### we already create a sheet in the codeforces group that discuss this topic
+* [Sheet](https://codeforces.com/group/B1an7MPWiH/contest/357994)
 
 #### Another problems:
 
@@ -58,6 +63,11 @@ In most cases, you can use frequency arrays safely for values up to 10^7. Howeve
 ---
 
 ## 4- Prefix sum
+https://www.youtube.com/watch?v=hqOqr6vFPp8
+* Prefix sum : [video](https://www.youtube.com/watch?v=hqOqr6vFPp8)
+* Another video : [video](https://youtu.be/fQwD4-FxQBU)
+
+
 #### Extra notes:
 * In many cases, you don't need the original array after you build the prefix_sum array. In these cases, it's better to "transform" your original array into a prefix_sum array, instead of creating a separate array for the prefix sum.  
 Suppose that you have a zero-indexed array `A` that you want to compute a prefix sum for, then you can write:
@@ -70,10 +80,17 @@ After this line, you can use the array `A` as a prefix_sum array. This is more m
 While the sum of elements in A[0:R] = prefix_sum[R]  
 
 Therefore, working with 1-indexed arrays (if you have N integers for example, the first of them will be A[1] and the last will be A[N], instead of A[0] and A[N-1]) can make your life easier, as you don't have to check whether `L` is equal to zero or not before you answer the query (which results in a shorter code).  
-So if you are going to input the array using `cin` for example (you can still understand the code even if you don't know `cin`), then you should create the two arrays `A` and `prefix_sum` with sizes >= N+1 and write:  
+So if you are going to input the array (of size N) and want to make a prefix array for it write:  
 ```c
-for(int i = 1; i <= N; i++) cin >> A[i];
-for(int i = 1; i <= N; i++) prefix_sum[i] = prefix_sum[i-1]+A[i];
+int arr[N+1];
+
+for(int i = 1; i <= N; i++)
+      cin >> arr[i];
+
+int prefix[N+1];
+prefix[0]=0;
+for(int i = 1; i <= N; i++)
+      prefix[i] = arr[i] + prefix[i-1];
 ```
 This assumes that prefix_sum[0] = 0, which is the case by default for global variables.  
 Now, the sum of elements in A[L:R] = prefix_sum[R] - prefix_sum[L-1] (for any `1 <= L <= R <= N`).
@@ -81,10 +98,7 @@ Now, the sum of elements in A[L:R] = prefix_sum[R] - prefix_sum[L-1] (for any `1
 * You can use prefix sum for multi-dimensional arrays. Here is a [video](https://www.youtube.com/watch?v=PwDqpOMwg6U) that
 demonstrates how this could be done for 2D arrays.  
 You can apply the same concept to 3D arrays, but it will be a little bit tedious.
-For higher dimensions, it's more convenient to use dynamic programming with the
-inclusion-exclusion principle (which is beyond the scope of our training) to solve this kind of problems.  
-It's also worth mentioning that even the simple 1D prefix sum uses (implicitly)
-dynamic programming and the principle of inclusion-exclusion.
+
 
 #### Problems:
 1. https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
