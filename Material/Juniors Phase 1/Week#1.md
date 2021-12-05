@@ -1,4 +1,3 @@
-<a href="https://codeforces.com/contest/1475/problem/B" target="_blank">Hello, world!</a>
 # Week #1
  
 ## 1- Thinking Techniques Tips:
@@ -27,6 +26,9 @@ For example, if your algorithm is O(N^2), and N (which is the array size for exa
 If the number you get from this substitution is <= 10^8, then "most probably" your solution will not exceed the time limit for most of the problems (which is about 2 seconds).
 
 #### Problems:
+
+#### you can check the Tutorial section for each problem, Don't ask about the solutions
+
 1. http://codeforces.com/problemset/problem/268/A
 2. https://codeforces.com/contest/1612/problem/A
 3. https://codeforces.com/group/eRF9oTy30p/contest/357837/problem/H 
@@ -35,7 +37,6 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 5. https://codeforces.com/problemset/problem/1478/B
 6. https://codeforces.com/contest/1475/problem/B
 
-#### you can check the Tutorial section for each problem, Don't ask about the solutions
 
 ---
 
@@ -44,20 +45,15 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 * The usage of frequency arrays has its limitations. Remember that you need an array whose size is equal to the value of the largest integer in the original array. Which means that you can't use a frequency array if the values in the original array can be up to 10^9 for example.  
 In most cases, you can use frequency arrays safely for values up to 10^7. However, in some websites like Codeforces, you will be given the amount of memory available for your program, which you can use to calculate (roughly) the maximum size of a frequency array that you can use.
 
-* You can use a frequency array to sort an array in O(M) time, where M is the value of the largest integer in the array. Which could be much more efficient than merge sort (which runs in O(NlogN)) in cases where the array size is large but the values inside the array are bounded with a small number.
-I'll leave it for you to think about how we could implement this function that can sort an array in O(M) using a frequency array.
+* You can use a frequency array to sort an array in O(M) time ([Counting Sort](https://www.geeksforgeeks.org/counting-sort/)), where M is the value of the largest integer in the array. Which could be much more efficient than merge sort (which runs in O(NlogN)) (we will discuss it later) in cases where the array size is large but the values inside the array are bounded with a small number.
 
-#### Problems:
-###### Basic problems
-1. https://app.codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/
-2. https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/
-3. https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
-4. http://codeforces.com/problemset/problem/520/A
 
-###### A little bit harder
-1. https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/
-2. https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
-3. http://codeforces.com/problemset/problem/767/A
+## we already create a sheet in the codeforces group that discuss this topic
+[Sheet](https://codeforces.com/group/B1an7MPWiH/contest/357994)
+
+#### Another problems:
+
+1. http://codeforces.com/problemset/problem/767/A
 
 ---
 
