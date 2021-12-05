@@ -13,6 +13,8 @@
 
 * what is Complexity : [video](https://youtu.be/sHhVsGQz9MI)
 
+* Problem Constraints : [video](https://youtu.be/6Fx8T_NBA7Q)
+
 * Another video :  [video](https://www.youtube.com/watch?v=hYalOGs1_Og)
 
 
@@ -63,7 +65,7 @@ In most cases, you can use frequency arrays safely for values up to 10^7. Howeve
 ---
 
 ## 4- Prefix sum
-https://www.youtube.com/watch?v=hqOqr6vFPp8
+
 * Prefix sum : [video](https://www.youtube.com/watch?v=hqOqr6vFPp8)
 * Another video : [video](https://youtu.be/fQwD4-FxQBU)
 
@@ -95,43 +97,21 @@ for(int i = 1; i <= N; i++)
 This assumes that prefix_sum[0] = 0, which is the case by default for global variables.  
 Now, the sum of elements in A[L:R] = prefix_sum[R] - prefix_sum[L-1] (for any `1 <= L <= R <= N`).
 
-* You can use prefix sum for multi-dimensional arrays. Here is a [video](https://www.youtube.com/watch?v=PwDqpOMwg6U) that
+* You can use prefix sum for multi-dimensional arrays. Here is a [video](https://youtu.be/hqOqr6vFPp8?t=465) that
 demonstrates how this could be done for 2D arrays.  
 You can apply the same concept to 3D arrays, but it will be a little bit tedious.
 
 
-#### Problems:
-1. https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
-2. https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/
-3. https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/  
-<details>
-  <summary>Need a hint for the third problem?</summary>
-   We answered in the video a query the looked like "How many fives are there in a certain range in the array?".  
-   You can apply the same thing for the letters 'A', 'C', 'G' and 'T' (e.g. How many 'A's are there?). And of course you can more easily check whether a letter appeared in the range or not.
-</details>
-
-###### A little bit harder
-1. http://codeforces.com/problemset/problem/368/B
-
----
-
-## 5- Complexity of algorithms II
-#### Problems:
-There are no problems for this video (at least for now), so I will add more problems for the next video to compensate.
-
-#### Want to learn more about the analysis of algorithms?
-Watch the last three videos in this [playlist](https://www.youtube.com/playlist?list=PLoK2Lr1miEm-5zCzKE8siQezj9rvQlnca).  
-This playlist is also an excellent resource if you want to learn about the implementation of data structures.
+#### we already create a sheet in the codeforces group that discuss this topic
+* [Sheet](https://codeforces.com/group/B1an7MPWiH/contest/357994)
 
 ---
 
 ## 6- C++
-#### Extra notes:
-* What I said that using `cin` makes your code shorter, I really meant that it is (usually) faster to write than `scanf`. Sorry if that wasn't clear.
+#### Vectors and its methods
 
-#### Additional references:
-You can learn more about C++ from this [website](http://www.cplusplus.com/doc/tutorial/), which also has a great documentation for the C++ STL (Standard Template Library). Just open up Google and type: cplusplus + the thing that you are searching for.  
-e.g. cplusplus vector or cplusplus sort function
+*  Vectors : [playlist](https://www.youtube.com/watch?v=AMnultLTdlI&list=PLCInYL3l2AainAE4Xq2kdNGDfG0bys2xp&index=2) ... whatch the three vectors video only
+
 
 #### Problems:
 In the last two videos, we haven't really learned a new algorithm or technique, so it's a good point to stop and practice.
@@ -151,12 +131,6 @@ In the last two videos, we haven't really learned a new algorithm or technique, 
 2. http://codeforces.com/problemset/problem/828/B
 3. http://codeforces.com/problemset/problem/825/B
 4. http://codeforces.com/problemset/problem/102/B
-
----
-
-## 7- Overflow and type casting
-#### Problems:
-There are no problems for this video (at least for now).
 
 ---
 
