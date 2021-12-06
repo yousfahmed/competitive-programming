@@ -118,7 +118,7 @@ You can apply the same concept to 3D arrays, but it will be a little bit tedious
 
 ---
 
-## 8- Partial sum
+## 7- Partial sum
 
 * Prefix sum : [video](https://youtu.be/vF78qRAAyx4)
 
