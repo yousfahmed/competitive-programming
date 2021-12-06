@@ -42,6 +42,7 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 4. https://codeforces.com/contest/1520/problem/A
 5. https://codeforces.com/problemset/problem/1478/B
 6. https://codeforces.com/contest/1475/problem/B
+7. https://codeforces.com/contest/1426/problem/A
 
 
 ---
