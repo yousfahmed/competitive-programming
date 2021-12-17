@@ -119,6 +119,8 @@ int main(){
 
 * next_permutation & prev_permutation : [Blog](https://www.geeksforgeeks.org/stdnext_permutation-prev_permutation-c/).
 
+* accumulate & partial_sum : [Blog](https://www.geeksforgeeks.org/accumulate-and-partial_sum-in-c-stl-numeric-header/).
+
 * reverse
 
 * sort & is_sorted
