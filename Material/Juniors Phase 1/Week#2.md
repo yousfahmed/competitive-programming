@@ -97,7 +97,7 @@ int main(){
 
 * Built in functions : [video](https://youtu.be/ZIYx0mmxuxs).
 
-# Maybe you must to get a little sneak peek for this functions : 
+######  Maybe you must to get a little sneak peek for this functions : 
 
 * count : [Blog](https://www.geeksforgeeks.org/set-count-function-in-c-stl/).
 
