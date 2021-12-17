@@ -1,6 +1,6 @@
 # Week #2
  
-  * Starting from this Week to another 3 Weeks We will discuss the containers in c++ and some important Topics 
+  * Starting from this Week to another 2 Weeks We will discuss the containers in c++ and some important Topics 
 
    
    ![Image](Images/EmbeddedImage.png)
