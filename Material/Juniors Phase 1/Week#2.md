@@ -97,3 +97,35 @@ int main(){
 
 * Built in functions : [video](https://youtu.be/ZIYx0mmxuxs).
 
+# Maybe you must to get a little sneak peek for this functions : 
+
+* count : [Blog](https://www.geeksforgeeks.org/set-count-function-in-c-stl/).
+
+* count_if : [Blog](https://www.geeksforgeeks.org/count_if-in-c/).
+
+* find : [Blog](https://www.geeksforgeeks.org/std-find-in-cpp/).
+
+* find_if & find_if_not : [Blog](https://www.geeksforgeeks.org/stdfind_if-stdfind_if_not-in-c/).
+
+* find_first_of  : [Blog](https://www.geeksforgeeks.org/stdfind_first_of-in-cpp/).
+
+* replace & replace_if : [Blog](https://www.geeksforgeeks.org/stdreplace-stdreplace_if-c/).
+
+* fill : [Blog](https://www.geeksforgeeks.org/fill-in-cpp-stl/).
+
+* remove & remove_if : [Blog](https://www.geeksforgeeks.org/list-remove-function-in-c-stl/).
+
+* unique : [Blog](https://www.geeksforgeeks.org/stdunique-in-cpp/).
+
+* next_permutation & prev_permutation : [Blog](https://www.geeksforgeeks.org/stdnext_permutation-prev_permutation-c/).
+
+* reverse
+
+* sort & is_sorted
+
+* binary_search
+
+* min_element & max_element  
+
+* min & max & swap 
+
