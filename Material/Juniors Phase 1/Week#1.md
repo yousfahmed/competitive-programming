@@ -60,7 +60,6 @@ In most cases, you can use frequency arrays safely for values up to 10^7. Howeve
 
 
 #### we already create a sheet in the codeforces group that discuss this topic
-* [Sheet](https://codeforces.com/group/4BawYTBUCN/contest/369674)
 
 #### Another problems:
 
@@ -107,7 +106,6 @@ You can apply the same concept to 3D arrays, but it will be a little bit tedious
 
 
 #### we already create a sheet in the codeforces group that discuss this topic
-* [Sheet](https://codeforces.com/group/B1an7MPWiH/contest/357994)
 
 ---
 
