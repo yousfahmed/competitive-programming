@@ -91,7 +91,7 @@ int main(){
 ```
 
 
-#### 6 - Binary Search & Built in functions
+## 6 - Binary Search & Built in functions
 
 * Binary Search How is Work ? : [video](https://youtu.be/qxhfkoDGGZc).
 
