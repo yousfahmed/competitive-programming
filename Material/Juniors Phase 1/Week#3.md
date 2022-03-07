@@ -1,133 +1,57 @@
 # Week #2
  
-  * Starting from this Week to another 2 Weeks We will discuss the containers in c++ and some important Topics 
+ #### I think after last week you can now understand what containers are 
 
    
    ![Image](Images/Week3.png)
 
-
-
+#### As you can see we finished half of them and now we continue ...
 ## 1 - important videos :
 
-  * Measuring Algorithms Perfromance - 1 : [video](https://youtu.be/EQzmtn4PzYQ) 
-
-  * Measuring Algorithms Perfromance - 2 : [video](https://youtu.be/ZNYQrKpR42g) 
+*  we will update this part later
   
-  * Common Errors Regularly check : [Blog](https://docs.google.com/document/d/11BWI1fSlaeik-yEncWj06_RNOAox47qZTgN_kGJQcvs/edit ) 
-
 ---
-## 2- Deque - Queue - Priority Queue
-
-*  Deque : [video](https://youtu.be/PPFhtX23oXc)
-
-*  Queue : [video](https://youtu.be/iLJXB9Daeq8)
-
-*  Priority Queue :  [video](https://youtu.be/0zr0JqSw7ic)
-
-
----
-
-## 3- Stack
-
-* Stack : [video](https://youtu.be/9r7IDtX5KS4)
+## 2- Lists  
+*  Pointers ?  -if you know it u can skip this part - 
+   *   pointer part 1 : [video](https://youtu.be/f7I4cnJ5KJo)
+   *   pointer part 2 : [video](https://youtu.be/ibSjFL607QA)
  
-* Balanced Parentheses Using Stack {([ ])} : [video](https://youtu.be/PLvD3pHaWHQ)
-
-* Expression Evaluation Using Stack : [video](https://youtu.be/Q4X7pZ5pyA4)
-
-* Infix To Postfix Using Stack : [video](https://youtu.be/xhcChs9jijM)
-
+*  Linked List : 
+   *  Introduction To Linked List : [video](https://youtu.be/t7WnaypBoNw)
+   *  Linked List Insertion : [video](https://youtu.be/t7iviFyL3K4)
+   *  Removeing in Linked List : [video](https://youtu.be/_v8lL7zMlFc)
+   *  Linked List Reverse,Search : [video](https://youtu.be/8kvQ-O10h4k)
+   *  Doubly Linked List : [video](https://youtu.be/9xtRgr2V2mY)
+#### After you finish these videos, I think you can create your own STLs    
+*  Linked List As STLs:
+   *  Forward List : [video](https://youtu.be/hp7BCTdEDFs)
+   *  List : [video](https://youtu.be/U2oXdm4PfeQ)
 
 ---
 
-## 4- Pairs & Struct & compare Fun
+## 3- Set
 
-* Pair : [video](https://youtu.be/ucQnEO0MSSs)
+* Set : [video](https://youtu.be/Yg7dpbXhhlY) - [Set Blog ](https://www.geeksforgeeks.org/set-in-cpp-stl/) - [multiSet Blog](https://www.geeksforgeeks.org/multiset-in-cpp-stl/)
+ 
+* Unordered Set & Unordered Multiset : [video](https://youtu.be/m9t4ORIMCro) - [Unordered Multiset Blog](https://www.geeksforgeeks.org/set-in-cpp-stl/) -  [Unordered Set Blog](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/)
 
-* Struct : [video](https://youtu.be/1oB0Tz3ITjY)
+* Ordre Set : [Set Blog](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
 
-* Compare Fun : [Blog](https://youtu.be/1oB0Tz3ITjY)
+#### be carful when we need to use binary search and it's method we use Set.lower() - set.upper() *Don't use lower(set.begin(),set.end (), )* .     
 
-* Sorting - Compare functions : [video](https://youtu.be/_9Rrq0q51BQ)
+---
 
-## 5- If you have a little knowledge of OOP , Important
+## 4- Sorting Algothims
 
-* Operator Overloading in C++ : [Blog](https://www.geeksforgeeks.org/operator-overloading-c/)
+* selection sort : [video](https://youtu.be/EnodMqJuQEo) - [Blog](https://www.geeksforgeeks.org/selection-sort/) 
 
-* if we have array of struct *for ex* we can sort this array by Operator Overloading : 
+* Bubble Sort  : [video](https://youtu.be/pIEGHDZHOCk) - [Blog](https://www.geeksforgeeks.org/bubble-sort/) 
 
-* For example, if we have N students and we want to store the grades of each student in five subjects and we want to sort them based on the total of five subjects.
+* Insertion Sort : [video](https://youtu.be/JecAk1FAOck) - [Blog](https://www.geeksforgeeks.org/insertion-sort/)
 
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-struct Student{
-    string name;
-    int grade[5];
-    bool operator<(Student&x){
-        int total1 = accumulate(this->grade , this->grade+5,0) ;
-        int total2 = accumulate(x.grade , x.grade+5,0);
-        return total1>total2;
-    }
-};
-int main(){
-    //freopen("ans.txt","r",stdin);
-    int n;
-    cin >> n;
-    vector<Student> arr(n);
-    for (int i = 0; i < 2; ++i) {
-        cin>>arr[i].name;
-        for (int&j:arr[i].grade)
-            cin>>j;
-    }
-
-    sort(arr.begin(),arr.end());
-
-    for (int i = 0; i < n; ++i)
-        cout << arr[i].name << '\n';
-    
-}
-
-```
+* Quick Sort : [video](https://youtu.be/lOB2TIwBiX8) - [video](https://youtu.be/EdVKzzlInFI) - [Blog](https://www.geeksforgeeks.org/quick-sort/)
 
 
-## 6 - Binary Search & Built in functions
+## 6 - String Built in functions
 
-* Binary Search How is Work ? : [video](https://youtu.be/qxhfkoDGGZc).
-
-* Built in functions : [video](https://youtu.be/ZIYx0mmxuxs).
-
-######  Maybe you must to get a little sneak peek for this functions : 
-
-* count : [Blog](https://www.geeksforgeeks.org/set-count-function-in-c-stl/).
-
-* count_if : [Blog](https://www.geeksforgeeks.org/count_if-in-c/).
-
-* find : [Blog](https://www.geeksforgeeks.org/std-find-in-cpp/).
-
-* find_if & find_if_not : [Blog](https://www.geeksforgeeks.org/stdfind_if-stdfind_if_not-in-c/).
-
-* find_first_of  : [Blog](https://www.geeksforgeeks.org/stdfind_first_of-in-cpp/).
-
-* replace & replace_if : [Blog](https://www.geeksforgeeks.org/stdreplace-stdreplace_if-c/).
-
-* fill : [Blog](https://www.geeksforgeeks.org/fill-in-cpp-stl/).
-
-* remove & remove_if : [Blog](https://www.geeksforgeeks.org/list-remove-function-in-c-stl/).
-
-* unique : [Blog](https://www.geeksforgeeks.org/stdunique-in-cpp/).
-
-* next_permutation & prev_permutation : [Blog](https://www.geeksforgeeks.org/stdnext_permutation-prev_permutation-c/).
-
-* accumulate & partial_sum : [Blog](https://www.geeksforgeeks.org/accumulate-and-partial_sum-in-c-stl-numeric-header/).
-
-* reverse
-
-* sort & is_sorted
-
-* binary_search
-
-* min_element & max_element  
-
-* min & max & swap 
-
+* geeksforgeeks : [Blog](https://www.geeksforgeeks.org/stdstring-class-in-c/).
