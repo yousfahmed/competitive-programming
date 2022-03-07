@@ -33,7 +33,8 @@
 
 * Set : [video](https://youtu.be/Yg7dpbXhhlY) - [Set Blog ](https://www.geeksforgeeks.org/set-in-cpp-stl/) - [multiSet Blog](https://www.geeksforgeeks.org/multiset-in-cpp-stl/)
  
-* Unordered Set & Unordered Multiset : [video](https://youtu.be/m9t4ORIMCro) - [Unordered Multiset Blog](https://www.geeksforgeeks.org/set-in-cpp-stl/) -  [Unordered Set Blog](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/)
+* Unordered Set & Unordered Multiset : [video](https://youtu.be/m9t4ORIMCro) - [Unordered Multiset Blog](https://www.geeksforgeeks.org/set-in-cpp-stl/) -  [Unordered Set Blog](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/) 
+    * -- In Worst Case O(N) *be careful with this point*
 
 * Ordre Set : [Set Blog](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
 
