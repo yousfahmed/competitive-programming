@@ -8,7 +8,7 @@
 * Tips and Tricks in Algorithms: [video](https://youtu.be/-jE3_O9Dpps)
 
 
-  * On papers Not on PC : [video](https://youtu.be/olcmPKZNqnM)
+* On papers Not on PC : [video](https://youtu.be/olcmPKZNqnM)
 
 
 ---
