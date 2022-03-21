@@ -2,7 +2,7 @@
 struct hsh {
 private:
     ll h1, h2, p1 = 1e9 + 7, p2 = 1e9 + 9, x;
-    static ll *pw1, *pw2;
+    ll *pw1, *pw2;
     int len;
     deque<int> q;
 public:
