@@ -28,7 +28,7 @@ public:
 
     void from_string(string s) {
         for (int i = 0; i < s.length(); ++i)
-            s.push_back(s[i]);
+            push_back(s[i]);
     }
 
     void pop_front() {
