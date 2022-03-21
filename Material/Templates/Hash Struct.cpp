@@ -38,15 +38,14 @@ public:
         len--;
     }
 
-    ll power(ll x, ll y, ll p) {
-        ll temp;
+    string get() { return string(q.begin(), q.end()); }
+
+    ll power(ll X, ll y, ll p) {
         if (y == 0) return 1;
-        temp = power(x, y / 2, p) % p;
+        ll temp = power(X, y / 2, p) % p;
         if (y % 2 == 0)
-            return temp * temp % p;
-        else if (y > 0)
-            return x * temp % p * temp % p;
-        return (temp * temp) / x;
+            return (temp * temp) % p;
+        return (((X * temp) % p) * temp) % p;
     }
 
     void pop_back() {
@@ -54,14 +53,14 @@ public:
         q.pop_back();
         h1 = ((h1 - t) + p1) % p1;
         h2 = ((h2 - t) + p2) % p2;
-        h1 = h1 * power(x, p1 - 2, p1);
-        h2 = h2 * power(x, p2 - 2, p2);
+        h1 = h1 * power(x, p1 - 2, p1) % p1;
+        h2 = h2 * power(x, p2 - 2, p2) % p2;
         len--;
     }
 
     void push_front(int ch) {
-        h1 = h1 + pw1[len] % p1;
-        h2 = h2 + pw2[len] % p2;
+        h1 = (h1 + ch * pw1[len] % p1) % p1;
+        h2 = (h2 + ch * pw2[len] % p2) % p2;
         len++;
         q.emplace_front(ch);
     }
@@ -70,5 +69,5 @@ public:
         return (X.h1 == h1 and X.h2 == h2);
     }
 
-
 };
+
