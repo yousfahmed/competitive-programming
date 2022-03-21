@@ -5,6 +5,15 @@ private:
     ll *pw1, *pw2;
     int len;
     deque<int> q;
+
+    ll power(ll X, ll y, ll p) {
+        if (y == 0) return 1;
+        ll temp = power(X, y / 2, p) % p;
+        if (y % 2 == 0)
+            return (temp * temp) % p;
+        return (((X * temp) % p) * temp) % p;
+    }
+
 public:
     hsh(int sz, int x = 128) {
         h1 = h2 = 0;
@@ -17,6 +26,12 @@ public:
             pw1[i] = pw1[i - 1] * x % p1;
             pw2[i] = pw2[i - 1] * x % p2;
         }
+    }
+
+    void clear() {
+        h1 = h2 = 0;
+        len = 0;
+        q.clear();
     }
 
     void push_back(int ch) {
@@ -40,12 +55,8 @@ public:
 
     string get() { return string(q.begin(), q.end()); }
 
-    ll power(ll X, ll y, ll p) {
-        if (y == 0) return 1;
-        ll temp = power(X, y / 2, p) % p;
-        if (y % 2 == 0)
-            return (temp * temp) % p;
-        return (((X * temp) % p) * temp) % p;
+    bool empty() {
+        return q.empty();
     }
 
     void pop_back() {
@@ -67,6 +78,10 @@ public:
 
     bool operator==(hsh &X) const {
         return (X.h1 == h1 and X.h2 == h2);
+    }
+
+    bool operator!=(hsh &X) const {
+        return (X.h1 != h1 or X.h2 != h2);
     }
 
 };
