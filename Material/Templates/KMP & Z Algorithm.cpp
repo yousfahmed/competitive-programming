@@ -18,7 +18,7 @@ void builtZ() {
     for (int i = 1; str[i]; ++i) {
         if (i >= r or i + Z[i - l] >= r) {
             l = i;
-            std::max(r, i);
+            r = std::max(r, i);
             while (str[r] and str[r] == str[r - l])r++;
             Z[i] = r - l;
         } else
