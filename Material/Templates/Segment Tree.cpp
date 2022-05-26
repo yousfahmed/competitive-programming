@@ -2,9 +2,9 @@
 class segmentTree {
 private:
     vector<int> seg;
-    int sz, ignored;
+    int sz, ignored;/// TODO
 
-    int merge(int a, int b) {
+    int merge(int a, int b) {/// TODO
         return a + b;
     }
 
