@@ -1,8 +1,8 @@
-#include <bits/stdc++.h>
+
 class segmentTree {
 private:
     vector<int> seg;
-    int sz;
+    int sz, ignored;
 
     int merge(int a, int b) {
         return a + b;
@@ -28,20 +28,21 @@ private:
         int mid = (rx + lx) >> 1;
         if (i < mid) set(i, val, x * 2 + 1, lx, mid);
         else set(i, val, x * 2 + 2, mid, rx);
-        seg[x] =  merge(seg[x * 2 + 1], seg[x * 2 + 2]);
+        seg[x] = merge(seg[x * 2 + 1], seg[x * 2 + 2]);
     }
 
     int query(int l, int r, int x, int lx, int rx) {
-        if (lx >= r or rx <= l) return 0;
+        if (lx >= r or rx <= l) return ignored;
         if (lx >= l and rx <= r)return seg[x];
         int mid = (rx + lx) >> 1;
-        return query(l, r, x * 2 + 1, lx, mid) + query(l, r, x * 2 + 2, mid, rx);
+        return merge(query(l, r, x * 2 + 1, lx, mid), query(l, r, x * 2 + 2, mid, rx));
     }
 
 public:
     segmentTree() : sz(0) {}
 
     void init(int n) {
+        ignored = 0;
         sz = 1;
         while (sz < n) sz <<= 1;
         seg.assign(2 * sz, 0);
