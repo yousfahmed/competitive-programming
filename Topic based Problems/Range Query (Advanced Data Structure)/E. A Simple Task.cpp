@@ -21,7 +21,7 @@ private:
             lazy[x * 2 + 1] = lazy[x];
             lazy[x * 2 + 2] = lazy[x];
         }
-        seg[x] = (lazy[x] ? rx - lx : 0);
+        seg[x] = lazy[x] * (rx - lx) ;
         lazy[x] = -1;
     }
 
