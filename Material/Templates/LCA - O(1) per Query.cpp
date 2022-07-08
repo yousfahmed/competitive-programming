@@ -3,7 +3,7 @@ struct LCA {
 private:
     
     template<class X>
-    int sz(X a) {return a.size();}
+    int sz(X&a) {return a.size();}
     
     vector<int> in, lvl, euler, LOG;
     vector<vector<pair<int, int>>> table;
