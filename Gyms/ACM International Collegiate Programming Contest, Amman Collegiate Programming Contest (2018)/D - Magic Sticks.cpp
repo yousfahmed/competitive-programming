@@ -1,7 +1,7 @@
 /*
    Author : Abdelaleem Ahmed
    Codeforces Handle  : [Abdelaleem](https://codeforces.com/profile/Abdelaleem)
-   Link To problem : https://codeforces.com/gym/101810/problem/M
+   Link To problem : https://codeforces.com/gym/101810/problem/D
 */
 
 #include <bits/stdc++.h>
