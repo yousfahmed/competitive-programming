@@ -14,7 +14,7 @@ void DFS(int u, int p) {
     tree[timer++] = u;
     for (int &v: adj[u])
         if (v != p) DFS(v, u);
-    out[u] = timer;
+    out[u] = timer - 1;
 }
 
 void update(int i, int v) {
@@ -72,12 +72,14 @@ int main() {
         if (colors[arr[tree[i]]].empty()) {
             update(i, 1);
             vis[i] = 1;
-        } else {
-            colors[arr[tree[i]]].emplace_back(i);
         }
+        colors[arr[tree[i]]].emplace_back(i);
     }
     for (auto &i: colors)
-        reverse(i.begin(), i.end());
+        if (i.size()) {
+            reverse(i.begin(), i.end());
+            i.pop_back();
+        }
     v = 0;
     for (auto &i: queries) {
         cin >> u;
