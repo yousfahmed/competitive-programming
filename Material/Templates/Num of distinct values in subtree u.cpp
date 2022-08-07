@@ -1,3 +1,5 @@
+/// DFS order + Binary indexed Tree + offline Queries
+
 #include <bits/stdc++.h>
 
 using namespace std;
