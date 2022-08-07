@@ -1,130 +1,131 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-#define NeedForSpeed ios_base::sync_with_stdio(0);cin.tie(0);
-#define ll long long
-const int N = 2e5 + 7;
-int tree[N << 2], in[N], out[N];
-int dp[30][N], depth[N], arr[N];
-vector<int> adj[N];
-int timer = 0;
-
-void DFS(int u, int p, int h = 0) {
-    in[u] = timer;
-    for (int &v: adj[u])
-        if (p != v) {
-            depth[v] = h + 1;
-            dp[0][v] = u;
-            for (int msk = 1; (1 << msk) <= depth[v]; ++msk)
-                dp[msk][v] = dp[msk - 1][dp[msk - 1][v]];
-            tree[timer++] = u;
-            DFS(v, u, h + 1);
-            tree[timer++] = u;
-        }
-    if (adj[u].size() == 1) {
-        tree[timer++] = u;
-        tree[timer++] = u;
-    }
-    out[u] = timer;
+ 
+const int MAXN = 40005;
+const int MAXM = 100005;
+const int LN = 19;
+ 
+int N, M, K, cur, A[MAXN], LVL[MAXN], DP[LN][MAXN];
+int BL[MAXN << 1], ID[MAXN << 1], VAL[MAXN], ANS[MAXM];
+int d[MAXN], l[MAXN], r[MAXN];
+bool VIS[MAXN];
+vector < int > adjList[MAXN];
+ 
+struct query{
+	int id, l, r, lc;
+	bool operator < (const query& rhs){
+		return (BL[l] == BL[rhs.l]) ? (r < rhs.r) : (BL[l] < BL[rhs.l]);
+	}
+}Q[MAXM];
+ 
+// Set up Stuff
+void dfs(int u, int par){
+	l[u] = ++cur; 
+	ID[cur] = u;
+	for (int i = 1; i < LN; i++) DP[i][u] = DP[i - 1][DP[i - 1][u]];
+	for (int i = 0; i < adjList[u].size(); i++){
+		int v = adjList[u][i];
+		if (v == par) continue;
+		LVL[v] = LVL[u] + 1;
+		DP[0][v] = u;
+		dfs(v, u);
+	}
+	r[u] = ++cur; ID[cur] = u;
 }
-
-int SQ;
-
-struct Query {
-    int l, r, i, b;
-
-    Query() {}
-
-    Query(int l, int r, int i) : i(i), l(l), r(r), b(l / SQ) {}
-
-    bool operator<(const Query &x) const {
-        return b != x.b ? b < x.b : r < x.r;
-    }
-};
-
-int LCA(int u, int v) {
-    if (depth[u] > depth[v]) swap(u, v);
-    for (int i = 19; i >= 0; i--)
-        if (depth[dp[i][v]] >= depth[u])
-            v = dp[i][v];
-    if (u == v)return u;
-    for (int i = 19; i >= 0; i--)
-        if (dp[i][v] != dp[i][u])
-            v = dp[i][v], u = dp[i][u];
-    return dp[0][v];
+ 
+// Function returns lca of (u) and (v)
+inline int lca(int u, int v){
+	if (LVL[u] > LVL[v]) swap(u, v);
+	for (int i = LN - 1; i >= 0; i--)
+		if (LVL[v] - (1 << i) >= LVL[u]) v = DP[i][v];
+	if (u == v) return u;
+	for (int i = LN - 1; i >= 0; i--){
+		if (DP[i][u] != DP[i][v]){
+			u = DP[i][u];
+			v = DP[i][v];
+		}
+	}
+	return DP[0][u];
 }
-
-int ans;
-int freq[N];
-
-void add(int i) { /// Assume the query is the number of distinict elements in sub tree u
-    ++freq[arr[tree[i]]];
-    if (freq[arr[tree[i]]] & 1) ++ans;
-    else --ans;
+ 
+inline void check(int x, int& res){
+	// If (x) occurs twice, then don't consider it's value 
+	if ( (VIS[x]) and (--VAL[A[x]] == 0) ) res--; 
+	else if ( (!VIS[x]) and (VAL[A[x]]++ == 0) ) res++;
+	VIS[x] ^= 1;
 }
-
-void remove(int i) {
-    --freq[arr[tree[i]]];
-    if (freq[arr[tree[i]]] & 1) ++ans;
-    else --ans;
+ 
+void compute(){
+	
+	// Perform standard Mo's Algorithm
+	int curL = Q[0].l, curR = Q[0].l - 1, res = 0;
+	
+	for (int i = 0; i < M; i++){
+		
+		while (curL < Q[i].l) check(ID[curL++], res);
+		while (curL > Q[i].l) check(ID[--curL], res);
+		while (curR < Q[i].r) check(ID[++curR], res);
+		while (curR > Q[i].r) check(ID[curR--], res);
+		
+		int u = ID[curL], v = ID[curR];
+		
+		// Case 2
+		if (Q[i].lc != u and Q[i].lc != v) check(Q[i].lc, res);
+		
+		ANS[Q[i].id] = res;
+		
+		if (Q[i].lc != u and Q[i].lc != v) check(Q[i].lc, res);
+	}
+ 
+	for (int i = 0; i < M; i++) printf("%d\n", ANS[i]);
 }
-
-
-vector<int> MOS(vector<Query> &queries, int Q) {
-    sort(queries.begin(), queries.end());
-    vector<int> ret(Q);
-    int l = 1, r = 0;
-    for (auto &q: queries) {
-        while (l < q.l) remove(l++);
-        while (l > q.l) add(--l);
-        while (r < q.r) add(++r);
-        while (r > q.r) remove(r--);
-        if (ret[q.i]) --ret[q.i];
-        ret[q.i] += ans;
-    }
-    return ret;
+ 
+int main(){
+ 
+	int u, v, x;
+	
+	while (scanf("%d %d", &N, &M) != EOF){
+		
+		// Cleanup
+		cur = 0;
+		memset(VIS, 0, sizeof(VIS));
+		memset(VAL, 0, sizeof(VAL));
+		for (int i = 1; i <= N; i++) adjList[i].clear();
+		
+		// Inputting Values
+		for (int i = 1; i <= N; i++) scanf("%d", &A[i]);
+		memcpy(d + 1, A + 1, sizeof(int) * N);
+		
+		// Compressing Coordinates
+		sort(d + 1, d + N + 1);
+		K = unique(d + 1, d + N + 1) - d - 1;
+		for (int i = 1; i <= N; i++) A[i] = lower_bound(d + 1, d + K + 1, A[i]) - d;
+		
+		// Inputting Tree
+		for (int i = 1; i < N; i++){
+			scanf("%d %d", &u, &v);
+			adjList[u].push_back(v);
+			adjList[v].push_back(u);
+		}
+		
+		// Preprocess
+		DP[0][1] = 1;
+		dfs(1, -1);
+		int size = sqrt(cur);
+		
+		for (int i = 1; i <= cur; i++) BL[i] = (i - 1) / size + 1;
+		
+		for (int i = 0; i < M; i++){
+			scanf("%d %d", &u, &v);
+			Q[i].lc = lca(u, v);
+			if (l[u] > l[v]) swap(u, v);
+			if (Q[i].lc == u) Q[i].l = l[u], Q[i].r = l[v];
+			else Q[i].l = r[u], Q[i].r = l[v];
+			Q[i].id = i;
+		}
+ 
+		sort(Q, Q + M);
+		compute();
+	}
 }
-
-
-int main() {
-    NeedForSpeed
-#ifndef ONLINE_JUDGE
-    freopen("ans.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
-    int n;
-    cin >> n;
-    SQ = ceil(sqrt(n));
-    int u, v;
-    for (int i = 1; i < n; ++i) {
-        cin >> u >> v;
-        --u, --v;
-        adj[u].emplace_back(v);
-        adj[v].emplace_back(u);
-    }
-    for (int i = 0; i < n; ++i) {
-        cin >> arr[i];
-    }
-    DFS(0, 0); /// DFS order -get flatting tree-
-    int q;
-    cin >> q;
-    vector<Query> queries;
-    queries.reserve(q << 1);
-    for (int i = 0; i < q; ++i) {
-        cin >> u >> v;
-        --u, --v;
-        int lca = LCA(u, v);
-        if (lca == u) {
-            queries.push_back(Query(in[u], in[v], i));
-        } else if (lca == v) {
-            queries.push_back(Query(in[v], in[u], i));
-        } else {
-            queries.push_back(Query(in[lca], in[u], i));
-            queries.push_back(Query(in[lca], in[v], i));
-        }
-    }
-    auto ret = MOS(queries, q);
-    for (int &i: ret)cout << i << ' ';
-    cout << '\n';
-}
+ 
