@@ -1,5 +1,3 @@
-typedef long long ll;
-
 struct Node {
     ll sum;
     Node *l, *r;
@@ -39,22 +37,22 @@ private:
         update(l, r, val, x->r, mid + 1, rx);
     }
 
-    ll query(int l, int r, Node *x, int lx, int rx) {
+    ll query(int i, Node *x, int lx, int rx) {
 
         if (x == nullptr)
             return 0;
 
         if (lx > rx)return 0;
 
-        if (r < lx || rx < l)
+        if (i < lx || rx < i)
             return 0;
 
-        if (l <= lx and rx <= r)
+        if (lx == rx)
             return x->sum;
 
         int mid = (lx + rx) >> 1;
 
-        return x->sum + query(l, r, x->l, lx, mid) + query(l, r, x->r, mid + 1, rx);
+        return x->sum + query(i, x->l, lx, mid) + query(i, x->r, mid + 1, rx);
     }
 
 public:
@@ -63,8 +61,8 @@ public:
         sz = n;
     }
 
-    ll query(int l, int r) {
-        return query(l, r, root, 0, sz - 1);
+    ll query(int i) {
+        return query(i, root, 0, sz - 1);
     }
 
 
