@@ -1,11 +1,26 @@
+typedef long long ll;
+
+struct Node {
+    ll sum;
+    Node *l, *r;
+
+    Node() : sum(0), l(nullptr), r(nullptr) {}
+};
+
 struct ImplicitSegTree {
 private:
     Node *root;
     int sz;
 
+
     void update(int l, int r, ll val, Node *x, int lx, int rx) {
         if (lx > rx || r < lx || l > rx)
             return;
+
+        if (lx == rx) { /// TODO
+
+        }
+
 
         if (l <= lx && rx <= r) {
             x->sum += val;
@@ -24,20 +39,22 @@ private:
         update(l, r, val, x->r, mid + 1, rx);
     }
 
-    ll query(int i, Node *x, int l, int r) {
+    ll query(int l, int r, Node *x, int lx, int rx) {
 
-        if (x == nullptr) /// no node
+        if (x == nullptr)
             return 0;
 
-        if (l > r || i < l || i > r)
+        if (lx > rx)return 0;
+
+        if (r < lx || rx < l)
             return 0;
 
-        if (l == r)
+        if (l <= lx and rx <= r)
             return x->sum;
 
-        int mid = (l + r) >> 1;
+        int mid = (lx + rx) >> 1;
 
-        return x->sum + query(i, x->l, l, mid) + query(i, x->r, mid + 1, r);
+        return x->sum + query(l, r, x->l, lx, mid) + query(l, r, x->r, mid + 1, rx);
     }
 
 public:
@@ -46,9 +63,10 @@ public:
         sz = n;
     }
 
-    int query(int i) {
-        return query(i, root, 0, sz - 1);
+    ll query(int l, int r) {
+        return query(l, r, root, 0, sz - 1);
     }
+
 
     void update(int l, int r, int val) {
         update(l, r, val, root, 0, sz - 1);
