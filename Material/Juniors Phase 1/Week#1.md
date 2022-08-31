@@ -37,12 +37,10 @@ If the number you get from this substitution is <= 10^8, then "most probably" yo
 
 1. http://codeforces.com/problemset/problem/268/A
 2. https://codeforces.com/contest/1612/problem/A
-3. https://codeforces.com/group/eRF9oTy30p/contest/357837/problem/H 
- * NewComsers group : https://codeforces.com/group/eRF9oTy30p/
-4. https://codeforces.com/contest/1520/problem/A
-5. https://codeforces.com/problemset/problem/1478/B
-6. https://codeforces.com/contest/1475/problem/B
-7. https://codeforces.com/contest/1426/problem/A
+3. https://codeforces.com/contest/1520/problem/A
+4. https://codeforces.com/problemset/problem/1478/B
+5. https://codeforces.com/contest/1475/problem/B
+6. https://codeforces.com/contest/1426/problem/A
 
 
 ---
