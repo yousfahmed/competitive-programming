@@ -1,6 +1,4 @@
 
-# Week #1
- 
 ## 1- Sources:
 
 ### Dr. Mostafa Saad
