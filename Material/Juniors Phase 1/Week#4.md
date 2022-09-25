@@ -1,7 +1,7 @@
 
 # Week #1
  
-## 1- Search Techniques - Binary Search:
+## 1- Searching Techniques - Binary Search:
 
 * Dr. Mostafa Saad - Binary Search (Arabic): [video](https://youtu.be/2G7RzlxTNPo) 
 
