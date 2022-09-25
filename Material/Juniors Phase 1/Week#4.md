@@ -1,7 +1,13 @@
 
-# Week #1
- 
-## 1- Searching Techniques - Binary Search:
+# Week #4
+
+## 1- Thinking Techniques Tips:
+#### important videos :
+* Incremental Thinking: [video](https://youtu.be/5zILiqyQ2ts) 
+
+* Problem Simplification: [video](https://youtu.be/x1rCxxKfFbM)
+
+## 2- Searching Techniques - Binary Search:
 
 * Dr. Mostafa Saad - Binary Search (Arabic): [video](https://youtu.be/2G7RzlxTNPo) 
 
