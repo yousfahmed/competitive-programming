@@ -28,9 +28,8 @@ int dp(int i, int j) {
     int &ret = mem[i][j];
     if (vis[i][j] == vs)return ret;
     vis[i][j] = vs;
-    ret = mul(dp(i + 1, j), k - j);
     ret = add(
-            ret,
+            mul(dp(i + 1, j), k - j),
             mul(dp(i + 1, j - 1), j)
     );
     return ret;
