@@ -42,7 +42,7 @@ struct node {
 
     /// number of elements less than or equal to x
     int get(int lq, int rq, int x, int p = -1) {
-        if (~!p)
+        if (!~p)
             p = upper_bound(all(val), x) - val.begin();
         if (lq <= l && rq >= r)
             return p;
