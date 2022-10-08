@@ -3,7 +3,7 @@
 
 ## 1- Two Pointer Technique:
 
-![Image](Two Pointer.webp)
+![Image](Images/two_pointer.gif)
 
 * [Two Pointer Technique](https://youtu.be/n-Xwrr8RFQ0) 
 
