@@ -3,6 +3,8 @@
 
 ## 1- Two Pointer Technique:
 
+![Image](Two Pointer.webp)
+
 * [Two Pointer Technique](https://youtu.be/n-Xwrr8RFQ0) 
 
 * [Quora - Two Pointer Technique](https://www.quora.com/profile/Abhijit-Dixit-6/The-Two-Pointer-Algorithm) 
