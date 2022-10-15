@@ -1,7 +1,7 @@
 
 ## 1- Sources:
 
-#### Week #1 - (knapsck - subset styles)
+#### Week #1 - (Knapsack, Subset styles, Building Output)
 
 * [Introduction - 1](https://youtu.be/gFdP6X4CyKU)
 
