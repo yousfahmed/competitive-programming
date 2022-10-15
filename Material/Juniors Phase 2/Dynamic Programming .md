@@ -1,7 +1,7 @@
 
 ## 1- Sources:
 
-#### Week #1
+#### Week #1 - (knapsck - subset styles)
 
 * [Introduction - 1](https://youtu.be/gFdP6X4CyKU)
 
@@ -15,7 +15,7 @@
 
 * [Ad-hoc - Memoizing in maps](https://youtu.be/gGEHeDdcNRs)
 
-#### Week #2
+#### Week #2 (Ranges)
 
 * [Consecutive Ranges Style](https://youtu.be/bDlAqeWsKsg)
 
