@@ -35,4 +35,7 @@
 
 * [Digit DP Phase 3](https://youtu.be/9YbxYnsp4BY)
 
+* [Digit DP Codeforces](https://codeforces.com/blog/entry/53960)
+
 * [Introduction to Digit DP Codeforces](https://codeforces.com/blog/entry/84928)
+
