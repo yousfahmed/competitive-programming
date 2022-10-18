@@ -29,7 +29,7 @@
 
 * [Digit DP Introduction](https://youtu.be/1--8_0bOHwA)
 
-* [Digit DP Phase 1](https://youtu.be/pJbeTrSKl3Y)
+* [Digit DP Phase 1](https://youtu.be/3yG5OJMw3VM)
 
 * [Digit DP Phase 2](https://youtu.be/dQ99enW770E)
 
