@@ -23,5 +23,16 @@
 
 * [General Ranges Style](https://youtu.be/pJbeTrSKl3Y)
 
+#### Week #3 (Counting, Digits)
 
+* [Counting](https://youtu.be/lE09Ss_Sy0A)
 
+* [Digit DP Introduction](https://youtu.be/1--8_0bOHwA)
+
+* [Digit DP Phase 1](https://youtu.be/pJbeTrSKl3Y)
+
+* [Digit DP Phase 2](https://youtu.be/dQ99enW770E)
+
+* [Digit DP Phase 3](https://youtu.be/9YbxYnsp4BY)
+
+* [Introduction to Digit DP Codeforces](https://codeforces.com/blog/entry/84928)
