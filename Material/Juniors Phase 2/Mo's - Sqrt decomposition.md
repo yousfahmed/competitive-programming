@@ -3,7 +3,7 @@
 
 #### 1- Sqrt Decomposition : 
 
-* [Code](Juniors%20Phase%202/Codes/SQRT_decom.cpp) - [using Struct](Juniors%20Phase%202/Codes/SQRT_decomp%20(Struct).cpp)
+* [Code](/Juniors%20Phase%202/Codes/SQRT_decom.cpp) - [using Struct](/Juniors%20Phase%202/Codes/SQRT_decomp%20(Struct).cpp)
 
 * [Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
 
