@@ -9,6 +9,6 @@
 
 * [anudeep2011 Blog](https://blog.anudeep2011.com/mos-algorithm)
 
-#### Week #2 (Ranges)
+#### 1- Mo's algorithm : [Code (from Session)](Juniors%20Phase%202/Codes/Mo.cpp)
 
-* Later
+* [hackerearth](https://www.hackerearth.com/practice/notes/mos-algorithm/#:~:text=Mo's%20algorithm%20is%20a%20generic,R%5D%20as%20its%20argument.)
