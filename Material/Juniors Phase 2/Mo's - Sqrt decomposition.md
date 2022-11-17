@@ -1,7 +1,11 @@
 
 ## 1- Sources:
 
-#### 1- Sqrt Decomposition : [Code (from Session)](Juniors%20Phase%202/Codes/SQRT_decom.cpp)
+#### 1- Sqrt Decomposition : 
+
+* [Code (from Session)](Juniors%20Phase%202/Codes/SQRT_decom.cpp)
+
+* [Code using Struct (from Session)](Juniors%20Phase%202/Codes/SQRT_decomp%20(Struct).cpp)
 
 * [Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
 
