@@ -35,7 +35,7 @@ struct Block {
         } else {
             arr[i] = v;
             mn = min(mn, v);
-            mx = min(mx, v);
+            mx = max(mx, v);
         }
     }
 };
