@@ -3,7 +3,7 @@
 
 #### 1- Sqrt Decomposition : 
 
-* [Code](/Juniors%20Phase%202/Codes/SQRT_decom.cpp) - [using Struct](/Juniors%20Phase%202/Codes/SQRT_decomp%20(Struct).cpp)
+* [Code](/Material/Juniors%20Phase%202/Codes/SQRT_decom.cpp) - [using Struct](/Material/Juniors%20Phase%202/Codes/SQRT_decomp%20(Struct).cpp)
 
 * [Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
 
@@ -13,7 +13,7 @@
 
 #### 2- Mo's algorithm :
 
-* [Code (from Session)](Juniors%20Phase%202/Codes/Mo.cpp)
+* [Code (from Session)](/Material/Juniors%20Phase%202/Codes/Mo.cpp)
 
 * [hackerearth](https://www.hackerearth.com/practice/notes/mos-algorithm/#:~:text=Mo's%20algorithm%20is%20a%20generic,R%5D%20as%20its%20argument.)
 
