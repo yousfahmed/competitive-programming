@@ -58,7 +58,7 @@ signed main() {
         cin >> arr[i];
     }
     vector<Query> queris;
-    queris.reserve(q);
+    queris.reserve(q); ///// https://cplusplus.com/reference/vector/vector/reserve
     for (int i = 0, l, r; i < q; ++i) {
         cin >> l >> r;
         queris.emplace_back(--l, --r, i); /// zero or 1 based ? 
