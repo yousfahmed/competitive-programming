@@ -2,7 +2,7 @@
 
 using namespace std;
 #define ll unsigned long long
-//#define int long long
+#define int long long
 ll pw1[50], pw2[50];
 
 struct node {
