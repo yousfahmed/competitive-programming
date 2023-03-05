@@ -13,7 +13,7 @@ double dis(int i, int j) {
 
 double dp(int i, int msk) {
   if (msk == full)return dis(i, k);
-  double ret = mem[i][msk];
+  double &ret = mem[i][msk];
   if (ret == ret)return ret;
   ret = 0;
   for (int j = 0; j < n; ++j) {
