@@ -51,7 +51,7 @@ signed main() {
     int n, q;
     cin >> n >> q;
 
-    SQ = ceil(ceil(n)); //// set the SQ
+    SQ = ceil(sqrt(n)); //// set the SQ
 
 
     for (int i = 0; i < n; ++i) {
