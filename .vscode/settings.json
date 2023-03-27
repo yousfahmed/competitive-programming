@@ -1,7 +1,0 @@
-{
-  "files.associations": {
-    "*.py": "python",
-    "algorithm": "cpp",
-    "utility": "cpp"
-  }
-}
