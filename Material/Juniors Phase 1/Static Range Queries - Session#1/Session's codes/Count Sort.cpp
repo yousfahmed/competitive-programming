@@ -13,7 +13,7 @@ void count_sort(string &str)
   char cur = 'a';
   for (int i = 0; i < 26; i++, cur++)
   {
-    for (int i = 0; i < frq[i]; i++)
+    for (int j = 0; j < frq[i]; j++)
     {
       str[idx] = cur;
       ++idx;
