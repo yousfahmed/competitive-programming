@@ -1,6 +1,6 @@
 # Week #3
     
-   ![Image](Images/InkedEmbeddedImage_LI.jpg)
+   ![Image](./Images/InkedEmbeddedImage_LI.jpg)
 
 #### As you can see we finished half of them and now we continue ...
 
