@@ -4,6 +4,12 @@
 
 #### As you can see we finished half of them and now we continue ...
 
+## Pointers ?  -if you know it u can skip this part - 
+   *   pointer part 1 : [video](https://youtu.be/f7I4cnJ5KJo)
+   *   pointer part 2 : [video](https://youtu.be/ibSjFL607QA)
+
+---
+
 ## 1- Stack 
  * Video : [link](https://www.youtube.com/watch?v=9r7IDtX5KS4)
  * Blog  : [link](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
