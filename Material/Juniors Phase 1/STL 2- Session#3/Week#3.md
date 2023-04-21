@@ -4,7 +4,7 @@
 
 #### As you can see we finished half of them and now we continue ...
 
-## Pointers ?  -if you know it u can skip this part - 
+## Pointers
    *   pointer part 1 : [video](https://youtu.be/f7I4cnJ5KJo)
    *   pointer part 2 : [video](https://youtu.be/ibSjFL607QA)
 
