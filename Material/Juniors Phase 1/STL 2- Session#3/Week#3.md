@@ -10,6 +10,9 @@
 
 ---
 
+
+## [session video](https://youtu.be/--fmBut2nLs)
+
 ## 1- Stack 
  * Video : [link](https://www.youtube.com/watch?v=9r7IDtX5KS4)
  * Blog  : [link](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
