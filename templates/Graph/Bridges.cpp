@@ -1,6 +1,6 @@
 ///  O(N + M)
-int n; // number of nodes
-vector<vector<int>> adj; // adjacency list of graph
+int n;
+vector<vector<int>> adj;
 
 vector<bool> visited;
 vector<int> tin, low;
