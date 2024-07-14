@@ -5,7 +5,9 @@ struct Query {
   int l, r, iq;
 
   bool operator<(const Query &other) const {
-    return make_pair(l / SQ, r) < make_pair(other.l / SQ, other.r);
+    int n1 = l / SQ, n2 = other.l / SQ;
+    if (n1 != n2) return n1 < n2;
+    return (n1 % 2) ? r > other.r : r < other.r;
   }
 };
 
@@ -54,7 +56,7 @@ int getMex() {
   return idx;
 }
 
-vector<int> MO(vector<Query> &queries) {
+vector<int> MO(vector <Query> &queries) {
   sort(queries.begin(), queries.end());
   vector<int> res(queries.size());
   int l = queries[0].l, r = queries[0].l;
