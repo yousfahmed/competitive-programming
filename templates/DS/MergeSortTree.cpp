@@ -1,7 +1,7 @@
-// need testing
 #define all(V) V.begin(), V.end()
 
 struct MergeSortTree {
+private:
 #define md ((lx+rx)>>1)
 #define LF (x*2+1)
 #define RT (x*2+2)
@@ -19,12 +19,6 @@ struct MergeSortTree {
     merge(all(seg[LF]), all(seg[RT]), seg[x].begin());
   }
 
-  void build(vector<int> &arr) {
-    sz = arr.size();
-    seg.assign(sz * 4, {});
-    build(arr, 0, 0, sz - 1);
-  }
-
   int query(int l, int r, int v, int x, int lx, int rx) {
     if (r < lx or rx < l)return 0;
     if (l <= lx and rx <= r) {
@@ -34,9 +28,17 @@ struct MergeSortTree {
            query(l, r, v, RT, md + 1, rx);
   }
 
+public:
+  void build(vector<int> &arr) {
+    sz = arr.size();
+    seg.assign(sz * 4, {});
+    build(arr, 0, 0, sz - 1);
+  }
+
   int query(int l, int r, int v) {
     return query(l, r, v, 0, 0, sz - 1);
   }
+
 #undef md
 #undef LF
 #undef RT
