@@ -1,3 +1,4 @@
+
 struct node {
   int ch[2]{-1, -1}, frq[2]{}, sz = 0;
 
@@ -67,7 +68,7 @@ struct BT {
     }
   }
 
-  /// Max array size where a[i] xor a[j] <= k
+  /// maximum subsequence where a[i] XOR a[j] <=  k
   int calc(int K, int x = 0, int dep = M - 1) {
     if (x == -1 or !nodes[x].sz) return 0;
     if (K >> dep & 1) {
@@ -79,7 +80,7 @@ struct BT {
     );
   }
 
-  /// Count number of integers from the set that make (a[i] xor num) >=l
+  /// count the number of integers from the array such that a[i] XOR num >= l.
   int query(int num, int l) {
     int u = 0, ans = 0;
     for (int i = M - 1; i >= 0; i--) {
@@ -96,8 +97,8 @@ struct BT {
     return ans + nodes[u].sz;
   }
 
-  /// Max value a[i] xor X
-  int query(int x) {
+  /// maximum value of a[i] XOR X 
+  int qusery(int x) {
     int ans = 0, cur = 0;
     for (int i = M - 1; i >= 0 && cur >= 0; --i) {
       int bt = x >> i & 1;
