@@ -1,3 +1,5 @@
+#define ll long long
+
 struct node {
   node *l, *r;
   int v, lazy;
@@ -7,7 +9,7 @@ struct node {
   node(int v) : node() { this->v = v; }
 
   node(node *l, node *r) {
-    this->l = l, this->r = r, lazy = 0, v = 0;
+    this->l = l, this->r = r, lazy = v = 0;
     if (l)v += l->v;
     if (r)v += r->v;
   }
@@ -32,13 +34,8 @@ namespace PSegTree {
 #define md ((lx+rx)>>1)
 
   node *build(vector<int> &a, int lx, int rx) {
-    if (lx == rx) {
-      return new node(a[lx]);
-    }
-    return new node(
-        build(a, lx, md),
-        build(a, md + 1, rx)
-    );
+    if (lx == rx) return new node(a[lx]);
+    return new node(build(a, lx, md), build(a, md + 1, rx));
   }
 
   void propagate(node *x, int lx, int rx) {
@@ -49,7 +46,7 @@ namespace PSegTree {
       x->l->lazy += x->lazy;
       x->r->lazy += x->lazy;
     }
-    //// add x to all numbers in a gavin range
+    //// Add x->lazy to all numbers in the given range
     x->v += x->lazy * (rx - lx + 1); //////TODO
     x->lazy = 0;
   }
