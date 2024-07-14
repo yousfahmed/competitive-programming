@@ -1,4 +1,3 @@
-
 struct node {
   int ch[2]{-1, -1}, frq[2]{}, sz = 0;
 
@@ -19,7 +18,7 @@ struct BT {
 
   BT() { init(); }
 
-  /// +1 -> add , -1 -> delete
+  /// +1 to add, -1 to delete
   void update(int val, int op) {
     int u = 0;
     for (int i = M - 1; i >= 0; --i) {
@@ -33,15 +32,13 @@ struct BT {
     }
   }
 
-  /// helper function
+  /// Helper function to match nodes in the trie
   int match(int x, int y, int dep, int K) {
-    if (x == -1 or y == -1)return 0;
-    if (!nodes[x].sz or !nodes[y].sz)return 0;
-
+    if (!~x or !~y or !nodes[x].sz or !nodes[y].sz)
+      return 0;
     if (K >> dep & 1) {
-      if (dep == 0) {
+      if (dep == 0)
         return 0;
-      }
       return match(nodes[x][0], nodes[y][1], dep - 1, K) +
              match(nodes[x][1], nodes[y][0], dep - 1, K);
     } else {
@@ -68,7 +65,7 @@ struct BT {
     }
   }
 
-  /// maximum subsequence where a[i] XOR a[j] <=  k
+  /// Maximum subsequence where a[i] XOR a[j] <= k
   int calc(int K, int x = 0, int dep = M - 1) {
     if (x == -1 or !nodes[x].sz) return 0;
     if (K >> dep & 1) {
@@ -80,7 +77,7 @@ struct BT {
     );
   }
 
-  /// count the number of integers from the array such that a[i] XOR num >= l.
+  /// Count the number of integers such that a[i] XOR num >= l
   int query(int num, int l) {
     int u = 0, ans = 0;
     for (int i = M - 1; i >= 0; i--) {
@@ -97,7 +94,7 @@ struct BT {
     return ans + nodes[u].sz;
   }
 
-  /// maximum value of a[i] XOR X 
+  /// Maximum value of a[i] XOR x
   int qusery(int x) {
     int ans = 0, cur = 0;
     for (int i = M - 1; i >= 0 && cur >= 0; --i) {
