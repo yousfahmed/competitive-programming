@@ -1,15 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-#define pb push_back
-#define int long long
-#define MAXN 100005
-
-int n, q;
-int v[MAXN];
-int vv[MAXN];
-
 namespace mo {
   struct query {
     int idx, l, r, t;
@@ -17,38 +5,38 @@ namespace mo {
   struct update {
     int i, prevx, x;
   };
-
-  int block;
+  const int SQ = 3153; // (2 * n) ^ 0.666
   vector<query> queries;
   vector<update> updates;
-  vector<int> ans;
+  vector<int> arr;
+  vector<ll> ans;
 
-  bool cmp(query x, query y) {
-    if (x.l / block != y.l / block)
-      return x.l / block < y.l / block;
-    if (x.r / block != y.r / block)
-      return x.r / block < y.r / block;
+  bool cmp(const query &x, const query &y) {
+    if (x.l / SQ != y.l / SQ)
+      return x.l / SQ < y.l / SQ;
+    if (x.r / SQ != y.r / SQ)
+      return x.r / SQ < y.r / SQ;
     return x.t < y.t;
   }
 
-  void run() {
-    block = 3153; // (2 * n) ^ 0.666
+  void run(const vector<int> &initial_arr) {
     sort(queries.begin(), queries.end(), cmp);
     ans.resize(queries.size());
-
-    int l = 0, r = 0, t = 0, sum = 0;
+    arr = initial_arr;
+    int l = 0, r = 0, t = 0;
+    ll sum = 0;
     auto add = [&](int x) {
       sum += x;
     };
     auto rem = [&](int x) {
       sum -= x;
     };
-    add(v[0]);
+    add(arr[0]);
     for (const auto &q: queries) {
-      while (r < q.r) add(v[++r]);
-      while (l > q.l) add(v[--l]);
-      while (r > q.r) rem(v[r--]);
-      while (l < q.l) rem(v[l++]);
+      while (r < q.r) add(arr[++r]);
+      while (l > q.l) add(arr[--l]);
+      while (r > q.r) rem(arr[r--]);
+      while (l < q.l) rem(arr[l++]);
 
       while (t > q.t) {
         t--;
@@ -56,52 +44,37 @@ namespace mo {
           rem(updates[t].x);
           add(updates[t].prevx);
         }
-        v[updates[t].i] = updates[t].prevx;
+        arr[updates[t].i] = updates[t].prevx;
       }
       while (t < q.t) {
         if (q.l <= updates[t].i && q.r >= updates[t].i) {
           rem(updates[t].prevx);
           add(updates[t].x);
         }
-        v[updates[t].i] = updates[t].x;
+        arr[updates[t].i] = updates[t].x;
         t++;
       }
       ans[q.idx] = sum;
     }
   }
-}
 
-signed main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cin >> n >> q;
-  for (int i = 0; i < n; i++) {
-    cin >> v[i];
-    vv[i] = v[i];
+  void init(const vector<int> &initial_arr) { arr = initial_arr; }
+
+  void add_query(int l, int r) {
+    query cur{};
+    cur.l = l;
+    cur.r = r;
+    cur.idx = queries.size();
+    cur.t = updates.size();
+    queries.emplace_back(cur);
   }
-  for (int i = 0; i < q; i++) {
-    int type;
-    cin >> type;
-    if (type == 1) {
-      mo::update curr{};
-      cin >> curr.i >> curr.x;
-      curr.prevx = vv[curr.i];
-      vv[curr.i] = curr.x;
-      mo::updates.pb(curr);
-    } else {
-      mo::query curr{};
-      cin >> curr.l >> curr.r;
-      curr.r--;
-      curr.idx = (int) mo::queries.size();
-      curr.t = (int) mo::updates.size();
-      mo::queries.pb(curr);
-    }
+
+  void add_update(int idx, int val) {
+    mo::update cur{};
+    cur.i = idx;
+    cur.x = val;
+    cur.prevx = arr[idx];
+    arr[idx] = val;
+    updates.emplace_back(cur);
   }
-  mo::run();
-  for (auto const &i: mo::ans)
-    cout << i << endl;
 }
-// 1 i v - set the element with index i to v
-// 2 l r - calculate the sum of elements with indices from l to r - 1
-// n, q <= 100000
-// runs in 467ms
