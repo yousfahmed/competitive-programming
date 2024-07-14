@@ -1,4 +1,5 @@
-const int SQ = 317, N = 1e5 + 5;
+const int SQ, N;
+int blk[SQ + 1], frq[N + 1];
 
 struct Query {
   int l, r, iq;
@@ -8,9 +9,6 @@ struct Query {
   }
 };
 
-int blk[SQ + 9], frq[N];
-int arr[N];
-
 void update(int val) {
   if (frq[val] == 1) {
     blk[val / SQ] += 1;
@@ -18,7 +16,6 @@ void update(int val) {
     blk[val / SQ] -= 1;
   }
 }
-
 
 void add(int i) {
   i = arr[i];
@@ -35,9 +32,7 @@ void rem(int i) {
 int getMax() {
   int idx = SQ - 1;
   while (~idx && !blk[idx])--idx;
-  if (idx == -1) { /// full segment
-    return 0;
-  }
+  if (idx == -1) return 0; /// empty subarray
   idx = (idx + 1) * SQ - 1;
   while (!frq[idx])--idx;
   return idx;
@@ -46,12 +41,12 @@ int getMax() {
 int getMin() {
   int idx = 0;
   while (!blk[idx]) ++idx;
-  idx = idx * SQ;
+  idx *= SQ;
   while (!frq[idx])++idx;
   return idx;
 }
 
-int getMEX() {
+int getMex() {
   int idx = 0;
   while (blk[idx] == SQ) ++idx;
   idx *= SQ;
@@ -59,8 +54,7 @@ int getMEX() {
   return idx;
 }
 
-
-vector<int> MO(vector<Query> queries) {
+vector<int> MO(vector<Query> &queries) {
   sort(queries.begin(), queries.end());
   vector<int> res(queries.size());
   int l = queries[0].l, r = queries[0].l;
@@ -70,7 +64,7 @@ vector<int> MO(vector<Query> queries) {
     while (l > lq) add(--l);
     while (r > rq) rem(r--);
     while (l < lq) rem(l++);
-    res[iq] = getMEX();
+    res[iq] = getMex();
   }
   return res;
 }
