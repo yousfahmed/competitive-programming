@@ -1,3 +1,6 @@
+#define ll long long
+mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
+
 //Beware!!!here treap is 0-indexed
 struct node {
   int val, sz, prior, lazy, mx, mn, repl;
@@ -195,110 +198,10 @@ struct Treap {
     operation(t);
   }
 
-  //insert val in position a[pos]
-  //so all previous values from pos to last will be right shifted
-  void insert(int pos, int val) {
-    if (root == NULL) {
-      pnode to_add = new node(val);
-      root = to_add;
-      position[val] = root;
-      return;
-    }
-
-    pnode l, r, mid;
-    mid = new node(val);
-    position[val] = mid;
-
-    split(root, l, r, pos - 1);
-    merge(l, l, mid);
-    merge(root, l, r);
-  }
-
-  //erase from qL to qR indexes
-  //so all previous indexes from qR+1 to last will be left shifted qR-qL+1 times
-  void erase(int qL, int qR) {
-    pnode l, r, mid;
-
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-    merge(root, l, r);
-  }
-
-  //returns answer for corresponding types of query
-  int query(int qL, int qR) {
-    pnode l, r, mid;
-
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-
-    int answer = mid->sum; /// max,min ?
-    merge(r, mid, r);
-    merge(root, l, r);
-
-    return answer;
-  }
-
-  //add val in all the values from a[qL] to a[qR] positions
-  void update(int qL, int qR, int val) {
-    pnode l, r, mid;
-
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-    lazy_repl_upd(mid);
-    mid->lazy += val;
-
-    merge(r, mid, r);
-    merge(root, l, r);
-  }
-
-  //reverse all the values from qL to qR
-  void reverse(int qL, int qR) {
-    pnode l, r, mid;
-
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-
-    mid->rev ^= 1;
-    merge(r, mid, r);
-    merge(root, l, r);
-  }
-
-  //replace all the values from a[qL] to a[qR] by v
-  void replace(int qL, int qR, int v) {
-    pnode l, r, mid;
-
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-    lazy_sum_upd(mid);
-    mid->repl_flag = 1;
-    mid->repl = v;
-    merge(r, mid, r);
-    merge(root, l, r);
-  }
-
-  //it will cyclic right shift the array k times
-  //so for k=1, a[qL]=a[qR] and all positions from ql+1 to qR will
-  //have values from previous a[qL] to a[qR-1]
-  //if you make left_shift=1 then it will to the opposite
-  void cyclic_shift(int qL, int qR, int k, bool left_shift = 0) {
-    if (qL == qR) return;
-    k %= (qR - qL + 1);
-
-    pnode l, r, mid, fh, sh;
-    split(root, l, r, qL - 1);
-    split(r, mid, r, qR - qL);
-
-    if (left_shift == 0) split(mid, fh, sh, (qR - qL + 1) - k - 1);
-    else split(mid, fh, sh, k - 1);
-    merge(mid, sh, fh);
-
-    merge(r, mid, r);
-    merge(root, l, r);
-  }
 
   bool exist;
 
-  //returns index of node curr
+  ///returns index of node curr
   int get_pos(pnode curr, pnode son = nullptr) {
     if (exist == 0) return 0;
     if (curr == NULL) {
@@ -319,10 +222,111 @@ struct Treap {
     else return get_pos(curr->par, curr) + size(curr->l) + 1;
   }
 
-  //returns index of the value
-  //if the value has multiple positions then it will
-  //return the last index where it was added last time
-  //returns -1 if it doesn't exist in the array
+  ///insert val in position a[pos]
+  ///so all previous values from pos to last will be right shifted
+  void insert(int pos, int val) {
+    if (root == NULL) {
+      pnode to_add = new node(val);
+      root = to_add;
+      position[val] = root;
+      return;
+    }
+
+    pnode l, r, mid;
+    mid = new node(val);
+    position[val] = mid;
+
+    split(root, l, r, pos - 1);
+    merge(l, l, mid);
+    merge(root, l, r);
+  }
+
+  ///erase from qL to qR indexes
+  //so all previous indexes from qR+1 to last will be left shifted qR-qL+1 times
+  void erase(int qL, int qR) {
+    pnode l, r, mid;
+
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+    merge(root, l, r);
+  }
+
+  ///returns answer for corresponding types of query [sum, max, min]
+  int query(int qL, int qR) {
+    pnode l, r, mid;
+
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+
+    int answer = mid->sum; /// max,min ?
+    merge(r, mid, r);
+    merge(root, l, r);
+
+    return answer;
+  }
+
+  ///add val in all the values from a[qL] to a[qR] positions
+  void update(int qL, int qR, int val) {
+    pnode l, r, mid;
+
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+    lazy_repl_upd(mid);
+    mid->lazy += val;
+
+    merge(r, mid, r);
+    merge(root, l, r);
+  }
+
+  ///reverse all the values from qL to qR
+  void reverse(int qL, int qR) {
+    pnode l, r, mid;
+
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+
+    mid->rev ^= 1;
+    merge(r, mid, r);
+    merge(root, l, r);
+  }
+
+  ///replace all the values from a[qL] to a[qR] by v
+  void replace(int qL, int qR, int v) {
+    pnode l, r, mid;
+
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+    lazy_sum_upd(mid);
+    mid->repl_flag = 1;
+    mid->repl = v;
+    merge(r, mid, r);
+    merge(root, l, r);
+  }
+
+  ///it will cyclic right shift the array k times
+  ///so for k=1, a[qL]=a[qR] and all positions from ql+1 to qR will
+  ///have values from previous a[qL] to a[qR-1]
+  ///if you make left_shift=1 then it will to the opposite
+  void cyclic_shift(int qL, int qR, int k, bool left_shift = 0) {
+    if (qL == qR) return;
+    k %= (qR - qL + 1);
+
+    pnode l, r, mid, fh, sh;
+    split(root, l, r, qL - 1);
+    split(r, mid, r, qR - qL);
+
+    if (left_shift == 0) split(mid, fh, sh, (qR - qL + 1) - k - 1);
+    else split(mid, fh, sh, k - 1);
+    merge(mid, sh, fh);
+
+    merge(r, mid, r);
+    merge(root, l, r);
+  }
+
+  ///returns index of the value
+  ///if the value has multiple positions then it will
+  ///return the last index where it was added last time
+  ///returns -1 if it doesn't exist in the array
   int get_pos(int value) {
     if (position.find(value) == position.end()) return -1;
     exist = 1;
@@ -331,6 +335,7 @@ struct Treap {
     else return x;
   }
 
+  /// access index in the array
   int get_val(int pos) {
     return query(pos, pos);
   }
@@ -339,9 +344,9 @@ struct Treap {
     return size(root);
   }
 
-
   bool find(int val) {
     if (get_pos(val) == -1) return 0;
     else return 1;
   }
+
 };
