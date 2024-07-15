@@ -12,3 +12,9 @@ struct custom_hash {
         return splitmix64(x + FIXED_RANDOM);
     }
 };
+
+struct pair_hash {
+  size_t operator()(const pair<int, int> &x) const {
+    return hash<long long>()(((long long) x.first) ^ (((long long) x.second) << 32));
+  }
+};
