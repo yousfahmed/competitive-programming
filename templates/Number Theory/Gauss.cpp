@@ -1,45 +1,41 @@
-vector<ll> gauss(vector<vector<ll>> &a) {
-  int n = a.size(), m = a[0].size() - 1;
-  for (int i = 0; i < n; i++)
-    for (int j = 0; j <= m; j++)
-      a[i][j] = (a[i][j] % mod + mod) % mod;
-
-  vector<int> where(m, -1);
+int Gauss(vector<vector<int>> a, vector<int> &ans) {
+  int n = a.size(), m = (int) a[0].size() - 1;
+  vector<int> pos(m, -1);
+  int free_var = 0;
+  const ll MODSQ = (ll) mod * mod;
+  int det = 1, rank = 0;
   for (int col = 0, row = 0; col < m && row < n; col++) {
-    int sel = row;
-    for (int i = row; i < n; i++)
-      if (a[i][col] > a[sel][col])
-        sel = i;
-    if (a[sel][col] == 0) {
-      where[col] = -1;
+    int mx = row;
+    for (int k = row; k < n; k++) if (a[k][col] > a[mx][col]) mx = k;
+    if (a[mx][col] == 0) {
+      det = 0;
       continue;
     }
-    for (int i = col; i <= m; i++)
-      swap(a[sel][i], a[row][i]);
-    where[col] = row;
-    ll c_inv = inv(a[row][col]);
-    for (int i = 0; i < n; i++)
-      if (i != row) {
-        if (a[i][col] == 0) continue;
-        ll c = (a[i][col] * c_inv) % mod;
-        for (int j = 0; j <= m; j++)
-          a[i][j] = (a[i][j] - c * a[row][j] % mod + mod) % mod;
+    for (int j = col; j <= m; j++) swap(a[mx][j], a[row][j]);
+    if (row != mx) det = det == 0 ? 0 : mod - det;
+    det = 1LL * det * a[row][col] % mod;
+    pos[col] = row;
+    int inv = power(a[row][col], mod - 2);
+    for (int i = 0; i < n && inv; i++) {
+      if (i != row && a[i][col]) {
+        int x = ((ll) a[i][col] * inv) % mod;
+        for (int j = col; j <= m && x; j++) {
+          if (a[row][j]) a[i][j] = (MODSQ + a[i][j] - ((ll) a[row][j] * x)) % mod;
+        }
       }
+    }
     row++;
+    ++rank;
   }
-  vector<ll> ans(m, 0);
-  ll ways = 1;
+  ans.assign(m, 0);
   for (int i = 0; i < m; i++) {
-    if (where[i] != -1)
-      ans[i] = a[where[i]][m] * inv(a[where[i]][i]) % mod;
-    else
-      ways = ways * mod % mod;
+    if (pos[i] == -1) free_var++;
+    else ans[i] = ((ll) a[pos[i]][m] * power(a[pos[i]][i], mod - 2)) % mod;
   }
   for (int i = 0; i < n; i++) {
-    ll sum = a[i][m] % mod;
-    for (int j = 0; j < m; j++)
-      sum = (sum + mod - (ans[j] * a[i][j]) % mod) % mod;
-    if (sum != 0) return {}; //Has No Sol
-    return ans;
+    ll val = 0;
+    for (int j = 0; j < m; j++) val = (val + ((ll) ans[j] * a[i][j])) % mod;
+    if (val != a[i][m]) return -1; //no solution
   }
+  return free_var; //has solution
 }
