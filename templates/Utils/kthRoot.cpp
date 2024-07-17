@@ -1,6 +1,6 @@
 ll kthRoot(ll n, ll k) // return integer kth root for n
 { // Also can be done by binary search for accurate results
-  double root = pow((double) n, 1.0 / (double) k);
+  double root = powl((double) n, 1.0 / (double) k);
   // will have percision errors
   ll realRoot = (ll) (root - 1);
   while (1) {
