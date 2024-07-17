@@ -1,3 +1,4 @@
+// O( sqrt(n) * m )
 struct HopcroftKarp {
 private:
   vector<vector<int>> *g = nullptr;
