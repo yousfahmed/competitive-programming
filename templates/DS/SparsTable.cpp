@@ -1,5 +1,5 @@
-/* how to use :
-  SparseTable<int> sp(a, [](int a, int b) {
+/*
+  SparseTable sp(a, [](int a, int b) {
     return max(a, b);
   });  
  */
